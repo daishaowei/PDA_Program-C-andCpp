@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using DATA_TEXT.WebS;
+
+
+namespace DATA_TEXT
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Service1 s = new Service1();  错误的实例化
+          
+            WebS.Service s = new Service();
+            string i;
+            i = s.reader();
+
+            MessageBox.Show("数据");
+            MessageBox.Show(i.ToString()); 
+            
+        }
+    }
+}
